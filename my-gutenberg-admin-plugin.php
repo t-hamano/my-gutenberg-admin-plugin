@@ -12,7 +12,7 @@ function my_plugin_menu() {
 		'my-gutenberg-admin-plugin', // スラッグ名（URLの一部にもなる）
 		'my_settings_page'           // コールバック関数
 	);
-};
+}
 add_action( 'admin_menu', 'my_plugin_menu' );
 
 // オプションページのコンテンツ
@@ -28,7 +28,7 @@ function my_admin_scripts( $hook_suffix ) {
 	}
 
 	// 依存スクリプト・バージョンが記述されたファイルを読み込み
-	$asset_file = include( plugin_dir_path( __FILE__ ) . '/build/index.asset.php' );
+	$asset_file = include plugin_dir_path( __FILE__ ) . '/build/index.asset.php';
 
 	// CSSファイルの読み込み
 	wp_enqueue_style(
